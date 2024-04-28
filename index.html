@@ -1,300 +1,235 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>W3.CSS Template</title>
-<script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
+  <head>
+    <title>Paws and Ponder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: black;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px); 
+        max-width: 80%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 
+                    0 8px 20px rgba(0, 0, 0, 0.2), 
+                    0 16px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        perspective: 1500px; 
+    }
+    .text-p{
+      text-align: center;
+      font-size: 1.2em;
+      margin:5%;
+    }
+    .text-footer{
+      font-size: 1em;
+      margin:5%;
+    }
+    .cost-vis{
+      display: flex;
+      justify-content: center;
+    }
+    .radar-vis{
+      margin-left: 5%;
+    }
+    #header-text{
+      font-size: 1.9em;
+    }
+    </style>
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  </head>
+<body class="w3-light-white w3-margin">
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('/w3images/parallax1.jpg');
-  min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("/w3images/parallax2.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("/w3images/parallax3.jpg");
-  min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-</style>
-</head>
-<body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  <h2 class="w3-left w3-tag w3-pale-red w3-round">Paws and Ponder</h2>
+  <a href="#Contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">ACCOMMODATIONS</a>
+  <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">BREED</a>
+  <a href="#Economic" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">ECONOMIC FACTORS</a>
+  <a href="#Chapter1" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top:10px;">INTRODUCTION</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <!-- <img class="bgimg-1 src="/images/header.jpeg" alt="Logo" style="width:20%"> -->
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
-  </div>
+<div id="demo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <a href="#Chapter1" class="w3-bar-item w3-button">INTRODUCTION</a>
+  <a href="#Economic" class="w3-bar-item w3-button">ECONOMIC FACTORS</a>
+  <a href="#Activities" class="w3-bar-item w3-button">BREED</a>
+  <a href="#Contact" class="w3-bar-item w3-button">ACCOMMODATIONS</a>
 </div>
 
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    
-    <tableau-viz id="tableauViz"       
-    src='https://public.tableau.com/shared/X83F4PW4N?:display_count=n&:origin=viz_share_link'>
-    </tableau-viz>
-    <tableau-viz id="tableauViz"       
-    src='https://public.tableau.com/views/visualization_shelters_final/Dashboard2?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'>
-    </tableau-viz>
+<div class="w3-content" style="max-width:1600px">
 
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="/images/header.jpeg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" style="padding-bottom:32px;" id="Home">
+    <img class="w3-image" src="images/IMG_1092.jpg" alt="Photo by Jamie Street" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large header-text">
+      <h1 class="w3-text-white" id="header-text">Your Guide to Dog Ownership Decisions</h1>
+      <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Paws and Ponder</b></h1>
+      <h6><button class="w3-button w3-round w3-pale-red w3-padding-large w3-large w3-hover-opacity-off"><a href="#Chapter1">Start Your Journey!</a></button></h6>
+    </div>
+  </header>
+
+  <div class="w3-row-padding" id="Chapter1">
+    <div class="w3-center w3-padding-32">
+      <h2 class="w3-wide w3-center">Rising Shelter Backlog: The Toll of Irresponsible Pet Ownership      </h2>
+         <p class="w3-white w3-text-black w3-left-align text-p">
+          Pet culture has developed rapidly since ancient times, with dogs being one of the most popular pets due to their loyalty and faithfulness. In modern times, dogs are still deeply embedded in human lives as a representation of companionship as well as beloved members of the family.
+          In recent years, the number of dog owners has grown sustainably. In the United States, the percentage of households owning dogs has increased from 38.4% to 44.5% from 2016 to 2022[1].</p>
+         <p class="w3-left-align w3-white w3-text-black text-p">However, as the number of dog owners has snowballed, the number of dogs abandoned or relinquished also experienced a huge increase, which results in great pressure on animal shelters in the U.S. According to Stephanie Filer,  Shelter Animals Count’s executive director,  “Shelters are quite literally at crisis[2].” The below graph shows the gap between the dogs entering and leaving animal shelters, the structure of entry and outcome types of these dogs, and how they have changed in recent years.</p>
+         
+    <div>
+      <tableau-viz id="tableauViz"       
+      src='https://public.tableau.com/views/Shelterdogdatavisinu_s_from2020to2023/Dashboard1?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'>
+      </tableau-viz>
     </div>
 
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div>
+      <p class="w3-left-align w3-white w3-text-black text-p">From 2020 to 2023, the gap keeps increasing, taking lots of the shelter's resources. As a result, most of the dogs backlogged in shelters will only see euthanasia as their end. The non-live outcome of dogs in shelters has indeed seen an obvious increase over the years. The root of all this is the irresponsible abandonment of their dogs by dog owners, as stray dogs and relinquished dogs take up the majority of total dogs entering animal shelters.
+        As reported in the article on TIME[2], the biggest reasons that dog owners give up their dogs are landlord disputes, pet restrictions, and financial pressure. 
+        </p>
     </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
-  </div>
-</div>
-
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Partners
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Projects Done
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
-  </div>
-</div>
-
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
     </div>
+   </div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+  <div class="w3-white" id="Economic">
+    <div class="w3-container">
+      <div class="w3-center w3-padding-32">
+      <h2 class="w3-wide">Economic Consideration</h2>
+      <p class="w3-opacity"><i>Make a mature decision</i></p><br>
+      <p class="w3-left-align w3-white w3-text-black text-p">
+        Owning a pet dog requires a lot of financial and community support - we all know this. The problem is that many pet owners don't think deeply enough about the decision to get a dog. A survey conducted on 2,000 dog owners showed that 54% of dog owners have regretted the decision to keep a dog. It is these immature dog ownership decisions that are contributing to the problem of the shelter backlog and the threat of death to the dogs in the shelters. 
+        Finance is one of the biggest burdens for dog owners. Study shows that in 2023, 91% of dog owners have suffered from financial stress due to pet care costs[4].
+              </p>
       </div>
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+      <div class="cost-vis">
+        <tableau-viz id="tableauViz"       
+        src='https://public.tableau.com/views/spending_17143324655590/Dashboard1?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'>
+        </tableau-viz>
+      </div>
+
+      <div>
+        <p class="w3-left-align w3-white w3-text-black text-p">Our visualization breaks down the annual spending on dogs and cats, revealing insights into the costs associated with pet ownership. Explore the contributions of food, veterinary care, toys, grooming, and other expenses to understand the financial commitment of caring for your furry companions. Especially if you already have a cute kitten, consider whether you can afford a new dog.</p>
+        <p class="w3-left-align w3-white w3-text-black text-p">Besides, discover the affordability of owning a dog in different cities across the country. Our visualization compares the median household income with the cost of owning a dog, providing insights into the financial implications of pet ownership in various locations[5].</p>
+      </div>
+
+      
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-third">
+          <img src="images/dog_food.jpg" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Dog Food</b></p>
+            
           </div>
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
+        <div class="w3-third">
+          <img src="images/dog_toy.jpg"  style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Dog Toy</b></p>
+            
+          </div>
+        </div>
+        <div class="w3-third">
+          <img src="images/dog_hair.jpeg" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Dog Grooming</b></p>
+            
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <div class="w3-white" id="Activities">
+    <div class="w3-container">
+      <div class="w3-center w3-padding-32">
+      <h2 class="w3-wide">Become a responsible dog owner</h2>
+      <p class="w3-opacity"><i>Find the perfect puppy for you</i></p><br>
+      <h3 class="w3-wide">Dog Breed Selection</h3>
+      <p class="w3-left-align w3-white w3-text-black text-p">
+        Our interactive scatter plot and radar plots provide valuable insights into the world of dog breeds, helping prospective dog owners make informed decisions. The scatter plot showcases the popularity of different dog breeds alongside their overall scores, offering a quick glance at which breeds are most favored. Click on any point to reveal detailed characteristics of that breed in the radar plot on the right. This dynamic feature allows you to explore the traits and attributes of each breed, aiding in your decision-making process.     
+        <br><br>Additionally, our search functionality enables you to quickly find specific breeds, making it easier to compare and evaluate different options. Whether you're looking for a highly popular breed or a hidden gem, our visualizations provide a comprehensive overview to guide your decision. Explore the scatter plot and radar plots to discover the perfect furry companion for your lifestyle and preferences.</p>
+         
+    <div class="radar-vis">
+      <tableau-viz id="tableauViz"       
+      src='https://public.tableau.com/shared/46K8QP7D3?:display_count=n&:origin=viz_share_link'>
+      </tableau-viz>
+    </div>
+    <p class="w3-left-align w3-white w3-text-black text-p">Tailoring your search for the perfect canine companion has never been easier with our customizable scatter plot. By adjusting the weights of key characteristics such as average height, average weight, intelligence, lifetime cost, longevity, and obedience, you can create a personalized score that reflects your priorities in a pet.
+      <br><br>
+      As you tweak these sliders, the scatter plot dynamically updates to display each breed's score based on your preferences. This allows you to explore how different breeds rank according to your chosen criteria, helping you find a dog that aligns with your lifestyle and preferences.</p>
+    <div class="cost-vis">
+      <tableau-viz id="tableauViz"       
+      src='https://public.tableau.com/views/radar_chart_17142885263280/Dashboard2?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'>
+      </tableau-viz>
+    </div>
+     
+        </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-center w3-padding-32" >
+        <h3 class="w3-wide" id="Contact">Statics of Dogs in Shelters</h3>
+        <p class="w3-left-align w3-white w3-text-black text-p">
+          Exploring the landscape of shelter dogs across the United States reveals both the heartwarming diversity and the urgent need for adoption. Our interactive map provides a bird's-eye view of the number of dogs currently in shelters in each state, offering a glimpse into the nationwide effort to find these dogs loving homes.
+          <br><br>Delving deeper, the top 10 breeds in shelters nationwide shed light on the most common companions awaiting adoption. From playful mixed breeds to loyal Labradors, these charts illustrate the variety of dogs hoping for a second chance.
+          <br><br>Selecting a state on the map refines the data, revealing the specific breed distribution within that state's shelters. The accompanying bar chart ranks the most prevalent breeds, helping you understand the local shelter scene and potentially finding a breed that resonates with you.</p>
+         
+          <div class="cost-vis">
+            <tableau-viz id="tableauViz"       
+            src='https://public.tableau.com/shared/X83F4PW4N?:display_count=n&:origin=viz_share_link'>
+            </tableau-viz>
+          </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div class="w3-center w3-padding-32">
+        <h3 class="w3-wide">Shelters & Dog-Friendly Rentals</h3>
+        <p class="w3-left-align w3-white w3-text-black text-p">Are you considering adopting a dog but unsure about the availability of shelters or dog-friendly rentals in your area? Our interactive visualization provides a comprehensive overview to help you make an informed decision. Explore the number of shelters, non-kill shelters, and dog-friendly rentals across different states in the US. Use the map selector to switch between different categories and discover which states offer the most options for shelter and rental accommodations.</p>
+        <p class="w3-left-align w3-white w3-text-black text-p">
+          The first map displays the total number of shelters in each state, with a stacked bar chart showing the top states with the highest number of shelters. This chart also includes the number of non-kill shelters in each of these top states, giving you an insight into the availability of shelters and the commitment to animal welfare.
+          <br><br>Switching to the non-kill shelters map, you can see the distribution of non-kill shelters across the US. The accompanying stacked bar chart highlights the top states with the highest number of non-kill shelters, providing valuable information about the states' efforts in promoting animal welfare and reducing euthanasia rates.
+          <br><br>For those looking for dog-friendly rentals, the third and fourth map displays the number of such rentals in each state. The stacked bar chart complements this map by showing the states with the highest number of small dog-friendly rentals or big dog-friendly rentals, helping you find the most suitable accommodation for your furry friend.
+        </p>
+         
+          <div class="cost-vis">
+            <tableau-viz id="tableauViz"       
+            src='https://public.tableau.com/views/visualization_shelters_final/Dashboard2?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'>
+            </tableau-viz>
+          </div>
+      </div>
+    </div>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+  
+  <div>
+    <br><br>
+    <h2 class="w3-wide w3-center">Conclusion</h2>
+    <p class="text-p">At Paws and Ponder, we're dedicated to helping you make informed decisions about dog ownership. Whether you're considering welcoming a furry friend into your home or you're a seasoned dog owner looking for new insights, our interactive visualizations and comprehensive data offer valuable guidance. Remember, owning a dog is a lifelong commitment, and understanding the responsibilities and costs involved is crucial. We hope our website has empowered you with the knowledge you need to provide a loving and fulfilling life for your canine companion.</p>
+  </div>
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
+  <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+  <footer class="w3-container w3-pale-red w3-center w3-margin-top">
+    
+    <p class="w3-small">Fangqing Lin & Yuexin Min &copy; 2024</p>
+  </footer>
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
+
 
 </body>
 </html>
